@@ -1,5 +1,9 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background: rgb(255);
+    background: rgb(255); width:fit-content;
     color: black;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -11,33 +15,44 @@ hr{
 }
 
 div { color: black; }
+
 h1 { 
     text-align: center; 
     background:url("assets/display.webp") no-repeat center center;
     background-size: cover;
     margin:0px; 
 }
+
 .top { display: flex; }
 
-.nav {
+#bar {
+    visibility: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 50px;
-    font-size:0;
+    width:75%;
 }
-.nav:hover {
-    font-size:medium;
-    width: 75%;
+
+#open {
+    visibility:visible;
+    display: flex;
 }
+
 #menu {
     height:50px;  width:50px; 
     margin-top:0px; margin-bottom:0px;
 }
+
 p {
     margin-top:0px; margin-bottom:0px;
     padding: 10px; font-weight: bolder;
 }
+
+.items {
+    background:none; border:none;
+    font-weight: bold;
+}
+
 .items:hover {
     border: 1px groove black;
     border-radius: 15px;
@@ -51,13 +66,15 @@ p {
 }
 
 #big { 
-    height:400px; width:15%; 
+    height:400px; width:400px; 
     border: solid 5px black; 
-    margin-right:10px; 
+    margin-right:10px; margin-left:10px; 
 }
 
 #dText {
     font-size: x-large;
+    line-height: 60px;
+    width:100%;
 }
 
 #main {
@@ -65,18 +82,21 @@ p {
     flex-flow: wrap;
     justify-content: space-evenly;
 }
+
 .info {
-    display:flex; width:50%;
-    flex-flow: row;
-    align-items: top;
+    display:flex; width:100%;
+    flex-flow: row wrap;
+    justify-content:center; align-items: center;
     margin-top: 0px; margin-bottom: 10px;
-    font-size: 30px;
+    font-size: 40px; font-weight:lighter;
+    text-align: center;
 }
 
 h2 {
-    width:45%;
-    text-align: center; text-decoration: underline;
-    margin-top: 10px; margin-bottom: 0px;
+    font-size: 40px; 
+    width:100%; display: flex; justify-content: center;
+    text-decoration: underline;
+    margin-top: 20px; margin-bottom: 20px;
 }
 
 .ph {
@@ -120,14 +140,31 @@ footer {
     margin-bottom:10px;
 }
 
-@media(max-width:1280px) {
-    .nav:hover {
-        width: 100%;
+#toTop {
+    border:none;
+    background:none;
+    position: fixed;
+    bottom:10px; right: 10px;
+}
+
+#arrow {
+    height:175px; width: 175px;
+}
+
+@media(max-width:1435px) {
+    #dText {
+        display: none;
     }
 }
 
 @media(max-width:1280px) {
-    .nav {
+    #bar {
+        width:100%;
+    }
+}
+
+@media(max-width:1000px) {
+    #bar {
         display: none;
     }
 }
